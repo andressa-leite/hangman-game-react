@@ -30,7 +30,9 @@ function App() {
         {/*  3 customs components */}
         <HangmanDrawing />
         <HangmanWords />
-        <Keyboards />
+        <div style={{ alignSelf: "stretch"}}>
+          <Keyboards />
+        </div>
       </div>
     </>
   );
