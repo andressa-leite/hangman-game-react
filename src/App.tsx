@@ -11,7 +11,9 @@ function App() {
   });
 
   // Check randomized words
-  const [trackedWord, setTrackedWord] = useState<string[]>([]);
+  const [guessedLetters, setGuessLetters] = useState<string[]>([]);
+
+  const incorrectGuesses = guessedLetters.filter(letter => !wordToTrack.includes(letter))
 
   return (
     <>
@@ -28,7 +30,7 @@ function App() {
         <div style={{ fontSize: "3rem", textAlign: "center", color: "gray" }}>Lose or Win</div>
 
         {/*  3 customs components */}
-        <HangmanDrawing />
+        <HangmanDrawing guessNumbers = {incorrectGuesses.length} />
         <HangmanWords />
         <div style={{ alignSelf: "stretch"}}>
           <Keyboards />
